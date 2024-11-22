@@ -17,7 +17,7 @@ def adminegesz():
     Akezdo.geometry("900x800")
     Akezdo.title("Főoldal")
     Akezdo.configure(bg="#9A7E6F")
-    proba = Label(Akezdo, text="Adminisztrátor", bg="#493628", fg="#9A7E6F",font=('sans', 60,'bold'),)
+    proba = Label(Akezdo, text="Adminisztrátor", bg="#9A7E6F", fg="#493628",font=('sans', 60,'bold'),)
     proba.grid(row= 0, columnspan=1,pady=(10,0), padx=200)
     lekerdezes = Button(Akezdo, text ="Lekérdezés", bg="#D6C0B3", font="sans 20 bold",  borderwidth=16, command=LekerdezesNyitas).grid(row= 1, pady=4,padx=200)
     módosítás = Button(Akezdo, text ="Módosításs", bg="#D6C0B3", font="sans 20 bold",  borderwidth=16, command=ModositasNyitas).grid(row= 2, pady=4,padx=200)
