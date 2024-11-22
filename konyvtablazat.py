@@ -5,7 +5,7 @@ def tablazat():
     tablazat = Tk()
     tablazat.geometry("1000x800")
     tablazat.title("Főoldal")
-    tablazat.configure(bg="black")
+    tablazat.configure(bg="#D6C0B3")
     tablazat.mainloop()
 
     
