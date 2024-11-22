@@ -3,26 +3,28 @@ import felhasznaloi
 import AdminKezdolap
 
 master = Tk()
-master.geometry("1000x800")
+master.geometry("600x400")
 master.title("Főoldal")
-master.configure(bg="black")
+master.configure(bg="#9A7E6F")
 def ujabblaknyitas():
      felhasznaloi.alap()
 def adminablak():
     AdminKezdolap.adminegesz()
 
-cím = Label(master, text="Kezdooldal™", fg="#28e8fa",bg="black",font=('Times', 60,'bold'))
-cím.grid(row= 1, columnspan=3,pady=(1,0), padx=320)
-jelszo_bence = Label(master, text="Írja be a felhasználónevét: ", fg="#28e8fa", bg="black", font=('Comic Sans', 10, 'bold'))
+cím = Label(master, text="Kezdooldal📖", fg="#493628",bg="#9A7E6F",font=('Times', 60,'bold'))
+cím.grid(row= 1, columnspan=3,pady=(1,0), padx=60)
+jelszo_bence = Label(master, text="Írja be a felhasználónevét: ", fg="#493628", bg="#9A7E6F", font=('Comic Sans', 10, 'bold'))
 jelszo_bence.grid(row=2, columnspan=3, pady=4, padx=5)
 
-username = Entry(master, width=20, bg="#28e8fa")
+username = Entry(master, width=20, bg="#9A7E6F")
 username.grid(row=3, columnspan=3, pady=3, padx=5)
-jelszo_bence = Label(master, text="Írja be a jelszavát: ", fg="#28e8fa", bg="black", font=('Comic Sans', 10, 'bold'))
+jelszo_bence = Label(master, text="Írja be a jelszavát: ", fg="#493628", bg="#9A7E6F", font=('Comic Sans', 10, 'bold'))
 jelszo_bence.grid(row=4, columnspan=3, pady=4, padx=5)
-jelszo = Entry(master, width=20, bg="#28e8fa", show="*")
+jelszo = Entry(master, width=20, bg="#9A7E6F", show="*")
 jelszo.grid(row=5, columnspan=3, pady=3, padx=5)
 
+def eltavolit():
+            rossz.destroy()
 def ellenoriz():
         felhasznalonev = username.get()
         jelszom = jelszo.get()
@@ -32,11 +34,15 @@ def ellenoriz():
         if felhasznalonev == "Admin" and jelszom == "Admin":
             adminablak()
         else:
-            rossz = Label(master, text="Rossz jelszó, próbáld újra", bg="black",fg="#28e8fa", font=('Comic Sans', 16, 'bold'))
+            rossz = Label(master, text="Rossz jelszó, próbáld újra", bg="#9A7E6F",fg="#493628", font=('Comic Sans', 11, 'bold'))
             rossz.grid(row=7, column=1, pady=10, padx=20) 
+            def eltavolit():
+                rossz.destroy()
+            rossz.after(2000, eltavolit)
+            
 
     # Ellenőrző gomb, amely hívja az ellenőrző függvényt
-ellenorzo = Button(master, text="Ellenőrzés!", fg="#28e8fa", bg="black", font="sans 13 bold", command=ellenoriz)
+ellenorzo = Button(master, text="Ellenőrzés!", fg="#493628", bg="#D6C0B3", font="sans 13 bold", command=ellenoriz)
 ellenorzo.grid(row=6, column=1, pady=10, padx=20)
 
 
