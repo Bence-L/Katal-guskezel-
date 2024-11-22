@@ -11,20 +11,21 @@ def ujabblaknyitas():
 def adminablak():
     AdminKezdolap.adminegesz()
 
-cím = Label(master, text="Kezdooldal📖", fg="#493628",bg="#9A7E6F",font=('Times', 60,'bold'))
+cím = Label(master, text="Kezdőoldal📖", fg="#493628",bg="#9A7E6F",font=('Times', 60,'bold'))
 cím.grid(row= 1, columnspan=3,pady=(1,0), padx=60)
-jelszo_bence = Label(master, text="Írja be a felhasználónevét: ", fg="#493628", bg="#9A7E6F", font=('Comic Sans', 10, 'bold'))
-jelszo_bence.grid(row=2, columnspan=3, pady=4, padx=5)
+felhasznalonev = Label(master, text="Írja be a felhasználónevét: ", fg="#493628", bg="#9A7E6F", font=('Comic Sans', 10, 'bold'))
+felhasznalonev.grid(row=2, columnspan=3, pady=4, padx=5)
 
-username = Entry(master, width=20, bg="#9A7E6F")
+username = Entry(master, width=20, bg="#D6C0B3")
 username.grid(row=3, columnspan=3, pady=3, padx=5)
-jelszo_bence = Label(master, text="Írja be a jelszavát: ", fg="#493628", bg="#9A7E6F", font=('Comic Sans', 10, 'bold'))
-jelszo_bence.grid(row=4, columnspan=3, pady=4, padx=5)
-jelszo = Entry(master, width=20, bg="#9A7E6F", show="*")
+
+jelszoleiras = Label(master, text="Írja be a jelszavát: ", fg="#493628", bg="#9A7E6F", font=('Comic Sans', 10, 'bold'))
+jelszoleiras.grid(row=4, columnspan=3, pady=4, padx=5)
+
+jelszo = Entry(master, width=20, bg="#D6C0B3", show="*")
 jelszo.grid(row=5, columnspan=3, pady=3, padx=5)
 
-def eltavolit():
-            rossz.destroy()
+
 def ellenoriz():
         felhasznalonev = username.get()
         jelszom = jelszo.get()
