@@ -5,5 +5,5 @@ def kolcson():
     kolcson = Tk()
     kolcson.geometry("1000x800")
     kolcson.title("Főoldal")
-    kolcson.configure(bg="black")
+    kolcson.configure(bg="#9A7E6F")
     kolcson.mainloop()
