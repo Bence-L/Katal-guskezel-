@@ -7,3 +7,5 @@ def kolcson():
     kolcson.title("Főoldal")
     kolcson.configure(bg="#9A7E6F")
     kolcson.mainloop()
+
+    

@@ -29,7 +29,7 @@ jelszo.grid(row=5, columnspan=3, pady=3, padx=5)
 def ellenoriz():
         felhasznalonev = username.get()
         jelszom = jelszo.get()
-        if felhasznalonev == "Felhasznalo" and jelszom == "Felhasznalo" :
+        if felhasznalonev == "1" and jelszom == "1" :
             # Fő ablak bezárása sikeres bejelentkezés esetén
             ujabblaknyitas()
         if felhasznalonev == "Admin" and jelszom == "Admin":
