@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter as tk
 from tkinter import ttk
+from konyvekhero import Objektum
 
 def adminkonyvei():
         Adminkonyvek = Tk()
@@ -9,10 +10,22 @@ def adminkonyvei():
         Adminkonyvek.configure(bg="#9A7E6F")
         proba = Label(Adminkonyvek, text="Könyvek", bg="#9A7E6F", fg="#493628",font=('sans', 70,'bold'),)
         proba.grid(row= 0, columnspan=1,pady=(10,10), padx=(550))
+        
+        def beolvasas():
+            global books
+            global adat
+            books = []
+            with open('könyvek.txt', 'r', encoding='utf-8') as fajl:
+                for sor in fajl:
+                    adat = sor.strip().split(',')
+                    # print(adat)
+                    adat2 = Objektum(adat[0], adat[1], adat[2], adat[3], adat[4], adat[5])
+        beolvasas()
+        
         def show():
-                
-            tempList = [["1984", "1949", "Secker & Warburg", "328", "978-0451524935", "nem" ],["1984", "1949", "Secker & Warburg", "328", "978-0451524935", "nem" ]]
-            tempList.sort(key=lambda e: e[1], reverse=True)
+            for i in books:
+                tempList = [Objektum(adat[0], adat[1], adat[2], adat[3], adat[4], adat[5])]
+                tempList.sort(key=lambda e: e[1], reverse=True)
 
             for i, (cim, kiadasidatum, kiado, oldalszam, isbn, kolcsonzott) in enumerate(tempList, start=1):
                 listBox.insert("", "end", values=( i, cim, kiadasidatum, kiado, oldalszam, isbn, kolcsonzott))

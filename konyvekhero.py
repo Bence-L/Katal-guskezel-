@@ -1,4 +1,4 @@
-class konyvek:
+class Objektum:
     def __init__(self, sorszam, cim, kiado, oldalszam, isbn, kolcsonzott):
         self.sorszam = sorszam
         self.cim = cim
