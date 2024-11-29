@@ -29,10 +29,10 @@ jelszo.grid(row=5, columnspan=3, pady=3, padx=5)
 def ellenoriz():
         felhasznalonev = username.get()
         jelszom = jelszo.get()
-        if felhasznalonev == "Felhasznalo" and jelszom == "Felhasznalo" :
+        if felhasznalonev == "1" and jelszom == "1" :
             # Fő ablak bezárása sikeres bejelentkezés esetén
             ujabblaknyitas()
-        if felhasznalonev == "Admin" and jelszom == "Admin":
+        if felhasznalonev == "2" and jelszom == "2":
             adminablak()
         else:
             rossz = Label(master, text="Rossz jelszó, próbáld újra", bg="#9A7E6F",fg="#493628", font=('Comic Sans', 11, 'bold'))
