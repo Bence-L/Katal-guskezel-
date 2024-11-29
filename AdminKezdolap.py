@@ -22,7 +22,7 @@ def adminegesz():
     Akezdo.configure(bg="#9A7E6F")
     proba = Label(Akezdo, text="Adminisztrátor", bg="#9A7E6F", fg="#493628",font=('sans', 60,'bold'),)
     proba.grid(row= 0, columnspan=1,pady=(10,0), padx=200)
-    konyvek = Button(Akezdo, text ="Könyvek", bg="#D6C0B3", font="sans 20 bold",  borderwidth=3, command=ADMINKONYV).grid(row= 1, pady=4,padx=200)
+    konyvek = Button(Akezdo, text ="Könyvek", bg="#D6C0B3", fg="#493628",font="sans 20 bold",  borderwidth=3, command=ADMINKONYV).grid(row= 1, pady=4,padx=200)
     lekerdezes = Button(Akezdo, text ="Lekérdezés", bg="#D6C0B3", font="sans 20 bold",  borderwidth=3, command=LekerdezesNyitas).grid(row= 2, pady=4,padx=200)
     módosítás = Button(Akezdo, text ="Módosításs", bg="#D6C0B3", font="sans 20 bold",  borderwidth=3, command=ModositasNyitas).grid(row= 3, pady=4,padx=200)
     hozzáadás = Button(Akezdo, text ="Hozzáadás", bg="#D6C0B3", font="sans 20 bold",  borderwidth=3, command=HozzaadasNyitas).grid(row= 4, pady=4,padx=200)

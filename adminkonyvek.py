@@ -11,18 +11,17 @@ def adminkonyvei():
         proba.grid(row= 0, columnspan=1,pady=(10,10), padx=(550))
         def show():
                 
-            tempList = []
+            tempList = [["1984", "1949", "Secker & Warburg", "328", "978-0451524935", "nem" ],["1984", "1949", "Secker & Warburg", "328", "978-0451524935", "nem" ]]
             tempList.sort(key=lambda e: e[1], reverse=True)
 
-            for i, (name, title, borrowed) in enumerate(tempList, start=1):
-                listBox.insert("", "end", values=(i, name, title, borrowed))
-        # create Treeview with 3 columns
+            for i, (cim, kiadasidatum, kiado, oldalszam, isbn, kolcsonzott) in enumerate(tempList, start=1):
+                listBox.insert("", "end", values=( i, cim, kiadasidatum, kiado, oldalszam, isbn, kolcsonzott))
         cols = ('Sorszám', 'Cím', 'Kiadási dátum', 'Kiadó', 'Oldalszám', 'ISBN', 'Kölcsönzött-e?')
         listBox = ttk.Treeview(Adminkonyvek, columns=cols, show='headings')
         # set column headings
         for col in cols:
             listBox.heading(col, text=col)    
-        listBox.grid(row=1, column=0, columnspan=2)
+        listBox.grid(row=3, column=0, columnspan=2)
         
 
         showScores = tk.Button(Adminkonyvek, text="Show tablazat", width=15, command=show).grid(row=4, column=0, padx=(200, 40))
