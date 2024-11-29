@@ -1,6 +1,6 @@
 from tkinter import *
 
-def Tfuggveny():
+def Hfuggveny():
     Torles = Tk()
     Torles.geometry("600x600")
     Torles.title("Törlés")
