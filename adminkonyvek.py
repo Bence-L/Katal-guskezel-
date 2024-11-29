@@ -14,21 +14,22 @@ def adminkonyvei():
         def beolvasas():
             global books
             global adat
+            global adat2
             books = []
             with open('könyvek.txt', 'r', encoding='utf-8') as fajl:
                 for sor in fajl:
                     adat = sor.strip().split(',')
-                    # print(adat)
-                    adat2 = Objektum(adat[0], adat[1], adat[2], adat[3], adat[4], adat[5])
+                    # print(adat) 
+                    adat2 = Objektum(adat[0], adat[1], adat[2], adat[3], adat[4], adat[5],)
         beolvasas()
         
         def show():
             for i in books:
-                tempList = [Objektum(adat[0], adat[1], adat[2], adat[3], adat[4], adat[5])]
+                tempList = [[adat2.sorszam,adat2.cim,adat2.evszam,adat2.kiado,adat2.oldalszam,adat2.isbn,adat2.kolcsonzott, ]]
                 tempList.sort(key=lambda e: e[1], reverse=True)
 
-            for i, (cim, kiadasidatum, kiado, oldalszam, isbn, kolcsonzott) in enumerate(tempList, start=1):
-                listBox.insert("", "end", values=( i, cim, kiadasidatum, kiado, oldalszam, isbn, kolcsonzott))
+                for i, (i, cim, kiadasidatum, kiado, oldalszam, isbn, kolcsonzott) in enumerate(tempList, start=1):
+                    listBox.insert("", "end", values=( i, cim, kiadasidatum, kiado, oldalszam, isbn, kolcsonzott))
         cols = ('Sorszám', 'Cím', 'Kiadási dátum', 'Kiadó', 'Oldalszám', 'ISBN', 'Kölcsönzött-e?')
         listBox = ttk.Treeview(Adminkonyvek, columns=cols, show='headings')
         # set column headings
