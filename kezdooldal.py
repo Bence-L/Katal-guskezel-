@@ -46,5 +46,7 @@ def ellenoriz():
 ellenorzo = Button(master, text="Ellenőrzés!", fg="#493628", bg="#D6C0B3", font="sans 13 bold", command=ellenoriz)
 ellenorzo.grid(row=6, column=1, pady=10, padx=20)
 
+bezaro = Button(master, text="Vissza", fg="#493628", bg="#FF8A8A", font="sans 13 bold", command=master.destroy)
+bezaro.grid(row=7, column=1, pady=10, padx=20)
 
 mainloop()
