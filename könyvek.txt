@@ -1,50 +1,50 @@
-1. 1984, 1949, Secker & Warburg, 328, 978-0451524935, nem 
-2. A kertészeti kézikönyv, 1996, Gulyás Kiadó, 400, 978-9632002336, nem   
-3. A mester és margarita, 1967, Harvill Press, 448, 978-0141180147, nem     
-4. To kill a mockingbird, 1960, J.B. Lippincott & Co., 281, 978-0061120084, nem     
-5. Harry potter és a bölcsek köve, 1997, Animus Kiadó, 320, 978-963-9700-57-7, nem     
-6. A kis herceg, 1943, Reynal & Hitchcock, 96, 978-0156012195, nem     
-7. Száz év magány, 1967, Harper & Row, 417, 978-0060883287, nem     
-8. Mester és margarita, 1967, Harvill Press, 447, 978-0141180147, nem     
-9. The lord of the rings, 1954, Allen & Unwin, 1,216, 978-0261103573, nem     
-10. Fahrenheit 451, 1953, Ballantine Books, 158, 978-1451673319, nem     
-11. Dracula, 1897, Archibald Constable and Co., 416, 978-0451530110, nem     
-12. Pride and prejudice, 1813, T. Egerton, 432, 978-1503290563, nem     
-13. A gyűrűk ura, 1954, J.R.R. Tolkien, 1,200, 978-0261102323, nem     
-14. Elveszett csillagok, 2019, Kossuth Kiadó, 280, 978-9630992719, nem     
-15. A kis herceg, 1943, Gallimard, 96, 978-0156012195, nem     
-16. Pán Péter története, 1911, Hodder & Stoughton, 220, 978-1840226390, nem     
-17. A szél nevét, 2007, Kossuth Kiadó, 766, 978-9630937360, nem     
-18. Az éhezők viadala, 2008, Scholastic Press, 374, 978-0439023481, nem     
-19. A test, 1982, Viking Penguin, 252, 978-0451169522, nem     
-20. Bűn és bűnhődés, 1866, The Russian Messenger, 430, 978-0143058144, nem     
-21. Az alkimista, 1988, HarperOne, 208, 978-0062315007, nem     
-22. A vadon szívében, 1903, The Macmillan Company, 327, 978-0143107004, nem     
-23. Az arany ember, 1839, Franklin Kiadó, 248, 978-9630979463, nem     
-24. Narnia krónikái, 1950-1956, HarperCollins, 768, 978-0064471190, nem     
-25. Az istenek vége, 2009, Kossuth Kiadó, 376, 978-9630977049, nem     
-26. Mennyből az angyal, 2012, GABO Kiadó, 272, 978-9634060752, nem     
-27. A meztelen csók, 2015, Libri Kiadó, 160, 978-9634337732, nem     
-28. A szél és a tengerek, 2011, Corvina Kiadó, 310, 978-9631366182, nem     
-29. Az óceán mélyén, 2003, Kossuth Kiadó, 378, 978-9630952811, nem     
-30. Tündérkirálynő, 2014, Könyvmolyképző Kiadó, 364, 978-9633556097, nem     
-31. A vihartánc, 2012, Agave Kiadó, 312, 978-9639633377, nem     
-32. A titkok könyve, 2018, Libri Kiadó, 432, 978-9634336940, nem     
-33. Képzelt riport egy amerikai popfesztiválról, 1974, Európa Kiadó, 155, 978-9630795367, nem     
-34. Az utolsó mohikán, 1826, Thomas C. & E. Jackson, 500, 978-0142437132, nem     
-35. Húsvéti regék, 2013, Gabo Kiadó, 336, 978-9634061728, nem     
-36. Hófehérke és a hét törpe, 1823, Jacob and Wilhelm Grimm, 32, 978-0192738593, nem     
-37. Az aranyhajú lány, 2019, Jaffa Kiadó, 265, 978-9634191904, nem     
-38. A falu, 2015, Scolar Kiadó, 342, 978-9632447771, nem     
-39. Kételkedők, 2009, Jelenkor Kiadó, 460, 978-9636762535, nem     
-40. Csingiling, 1904, J.M. Barrie, 224, 978-1405278994, nem     
-41. Hófehérke és a hét törpe, 1823, Jacob and Wilhelm Grimm, 32, 978-0192738593, nem     
-42. A csillagok alatt, 2016, Alexandra Kiadó, 380, 978-9632974002, nem     
-43. A forradalom szelleme, 2017, Partvonal Kiadó, 295, 978-6155316745, nem     
-44. Kávé, könyv, élet, 2018, Helikon Kiadó, 280, 978-9632270204, nem     
-45. Két elme, 2015, Kossuth Kiadó, 312, 978-9630991989, nem     
-46. A fáraó árnyéka, 2014, Akadémiai Kiadó, 249, 978-9630596031, nem     
-47. A titokzatos sziget, 1874, Hetzel, 431, 978-1533148062, nem     
-48. Viharboszorkány, 2016, Könyvmolyképző Kiadó, 348, 978-9633640962, nem     
-49. Káosz és rend, 2018, Gabo Kiadó, 322, 978-9634061919, nem     
-50. A nyugati világ vége, 2020, Tilos Az Á Kiadó, 301, 978-9634104216, nem   
+1984, 1949, Secker & Warburg, 328, 978-0451524935, nem
+A kertészeti kézikönyv, 1996, Gulyás Kiadó, 400, 978-9632002336, nem
+A mester és margarita, 1967, Harvill Press, 448, 978-0141180147, nem
+To kill a mockingbird, 1960, J.B. Lippincott & Co., 281, 978-0061120084, nem
+Harry potter és a bölcsek köve, 1997, Animus Kiadó, 320, 978-963-9700-57-7, nem
+A kis herceg, 1943, Reynal & Hitchcock, 96, 978-0156012195, nem
+Száz év magány, 1967, Harper & Row, 417, 978-0060883287, nem
+Mester és margarita, 1967, Harvill Press, 447, 978-0141180147, nem
+The lord of the rings, 1954, Allen & Unwin, 1,216, 978-0261103573, nem
+Fahrenheit 451, 1953, Ballantine Books, 158, 978-1451673319, nem
+Dracula, 1897, Archibald Constable and Co., 416, 978-0451530110, nem
+Pride and prejudice, 1813, T. Egerton, 432, 978-1503290563, nem
+A gyűrűk ura, 1954, J.R.R. Tolkien, 1200, 978-0261102323, nem
+Elveszett csillagok, 2019, Kossuth Kiadó, 280, 978-9630992719, nem
+A kis herceg, 1943, Gallimard, 96, 978-0156012195, nem
+Pán Péter története, 1911, Hodder & Stoughton, 220, 978-1840226390, nem
+A szél nevét, 2007, Kossuth Kiadó, 766, 978-9630937360, nem
+Az éhezők viadala, 2008, Scholastic Press, 374, 978-0439023481, nem
+A test, 1982, Viking Penguin, 252, 978-0451169522, nem
+Bűn és bűnhődés, 1866, The Russian Messenger, 430, 978-0143058144, nem
+Az alkimista, 1988, HarperOne, 208, 978-0062315007, nem
+A vadon szívében, 1903, The Macmillan Company, 327, 978-0143107004, nem
+Az arany ember, 1839, Franklin Kiadó, 248, 978-9630979463, nem
+Narnia krónikái, 1950-1956, HarperCollins, 768, 978-0064471190, nem
+Az istenek vége, 2009, Kossuth Kiadó, 376, 978-9630977049, nem
+Mennyből az angyal, 2012, GABO Kiadó, 272, 978-9634060752, nem
+A meztelen csók, 2015, Libri Kiadó, 160, 978-9634337732, nem
+A szél és a tengerek, 2011, Corvina Kiadó, 310, 978-9631366182, nem
+Az óceán mélyén, 2003, Kossuth Kiadó, 378, 978-9630952811, nem
+Tündérkirálynő, 2014, Könyvmolyképző Kiadó, 364, 978-9633556097, nem
+A vihartánc, 2012, Agave Kiadó, 312, 978-9639633377, nem
+A titkok könyve, 2018, Libri Kiadó, 432, 978-9634336940, nem
+Képzelt riport egy amerikai popfesztiválról, 1974, Európa Kiadó, 155, 978-9630795367, nem
+Az utolsó mohikán, 1826, Thomas C. & E. Jackson, 500, 978-0142437132, nem
+Húsvéti regék, 2013, Gabo Kiadó, 336, 978-9634061728, nem
+Hófehérke és a hét törpe, 1823, Jacob and Wilhelm Grimm, 32, 978-0192738593, nem
+Az aranyhajú lány, 2019, Jaffa Kiadó, 265, 978-9634191904, nem
+A falu, 2015, Scolar Kiadó, 342, 978-9632447771, nem
+Kételkedők, 2009, Jelenkor Kiadó, 460, 978-9636762535, nem
+Csingiling, 1904, J.M. Barrie, 224, 978-1405278994, nem
+Hófehérke és a hét törpe, 1823, Jacob and Wilhelm Grimm, 32, 978-0192738593, nem
+A csillagok alatt, 2016, Alexandra Kiadó, 380, 978-9632974002, nem
+A forradalom szelleme, 2017, Partvonal Kiadó, 295, 978-6155316745, nem
+Kávé, könyv, élet, 2018, Helikon Kiadó, 280, 978-9632270204, nem
+Két elme, 2015, Kossuth Kiadó, 312, 978-9630991989, nem
+A fáraó árnyéka, 2014, Akadémiai Kiadó, 249, 978-9630596031, nem
+A titokzatos sziget, 1874, Hetzel, 431, 978-1533148062, nem
+Viharboszorkány, 2016, Könyvmolyképző Kiadó, 348, 978-9633640962, nem
+Káosz és rend, 2018, Gabo Kiadó, 322, 978-9634061919, nem
+A nyugati világ vége, 2020, Tilos Az Á Kiadó, 301, 978-9634104216, nem
