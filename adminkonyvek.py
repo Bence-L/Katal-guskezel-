@@ -14,7 +14,7 @@ class Objektum:
 def adminkonyvei():
     Adminkonyvek = tk.Tk()
     Adminkonyvek.geometry("1420x600")
-    Adminkonyvek.title("Lekérdezés")
+    Adminkonyvek.title("Könyvek🎄")
     Adminkonyvek.configure(bg="#9A7E6F")
     
     proba = tk.Label(Adminkonyvek, text="Könyvek", bg="#9A7E6F", fg="#493628", font=('sans', 70, 'bold'))
