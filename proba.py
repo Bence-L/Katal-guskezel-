@@ -1,48 +1,72 @@
 import tkinter as tk
 from tkinter import ttk
-from random import choice
+from tkinter.messagebox import showinfo
 
-# window
-window = tk.Tk()
-window.geometry('600x400')
-window.title('Treeview')
+root = tk.Tk()
+root.title('Treeview demo')
+root.geometry('620x200')
 
-# data 
-first_names = ['Bob', 'Maria', 'Alex', 'James', 'Susan', 'Henry', 'Lisa', 'Anna', 'Lisa']
-last_names = ['Smith', 'Brown', 'Wilson', 'Thomson', 'Cook', 'Taylor', 'Walker', 'Clark']
+# define columns
+columns = ('Sorszám', 'Cím', 'Kiadási dátum', 'Kiadó', 'Oldalszám', 'ISBN', 'Kölcsönzött-e?')
 
-# treeview 
-table = ttk.Treeview(window, columns = ('first', 'last', 'email'), show = 'headings')
-table.heading('first', text = 'First name')
-table.heading('last', text = 'Surname')
-table.heading('email', text = 'Email')
-table.pack(fill = 'both', expand = True)
+tree = ttk.Treeview(root, columns=columns, show='headings')
 
-# insert values into a table
-# table.insert(parent = '', index = 0, values = ('John', 'Doe', 'JohnDoe@email.com'))
-for i in range(100):
-	first = choice(first_names)
-	last = choice(last_names)
-	email = f'{first[0]}{last}@email.com'
-	data = (first, last, email)
-	table.insert(parent = '', index = 0, values = data)
+# define headings
+tree.heading('Sorszám', text='First Name')
+tree.heading('Cím', text='Cím')
+tree.heading('Kiadási dátum', text='Kiadási dátum')
+tree.heading('Kiadó', text='Kiadó')
+tree.heading('Oldalszám', text='Oldalszám ')
+tree.heading('ISBN', text='ISBN')
+tree.heading('Kölcsönzött-e?', text=' Kölcsönzött-e?')
 
-table.insert(parent = '', index = tk.END, values = ('XXXXX', 'YYYYY', 'ZZZZZ'))
+class Objektum:
+    def __init__(self, sorszam, cim, evszam, kiado, oldalszam, isbn, igennem):
+        self.sorszam = sorszam
+        self.cim = cim
+        self.evszam = evszam
+        self.kiado = kiado
+        self.oldalszam = oldalszam
+        self.isbn = isbn
+        self.igennem = igennem
 
-# events
-def item_select(_):
-	print(table.selection())
-	for i in table.selection():
-		print(table.item(i)['values'])
-	# table.item(table.selection())
 
-def delete_items(_):
-	print('delete')
-	for i in table.selection():
-		table.delete(i)
+global books
+books = []
+with open('könyvek.txt', 'r', encoding='utf-8') as fajl:
+        for i, sor in enumerate(fajl, start=1):
+                adat = sor.strip().split(',')  
+                cim = adat[0].strip()  
+                evszam = adat[1].strip()
+                kiado = adat[2].strip()
+                oldalszam = adat[3].strip()
+                isbn = adat[4].strip()
+                igennem = adat[5].strip()
+                book = Objektum(i, cim, evszam, kiado, oldalszam, isbn, igennem)  
+                books.append(book)
+# generate sample data
 
-table.bind('<<TreeviewSelect>>', item_select)
-table.bind('<Delete>', delete_items)
+# add data to the treeview
+for i in books:
+    tree.insert('', tk.END, values=books)
 
-# run 
-window.mainloop()
+
+def item_selected(event):
+    for selected_item in tree.selection():
+        item = tree.item(selected_item)
+        record = item['values']
+        # show a message
+        showinfo(title='Information', message=','.join(record))
+
+
+tree.bind('<<TreeviewSelect>>', item_selected)
+
+tree.grid(row=0, column=0, sticky='nsew')
+
+# add a scrollbar
+scrollbar = ttk.Scrollbar(root, orient=tk.VERTICAL, command=tree.yview)
+tree.configure(yscroll=scrollbar.set)
+scrollbar.grid(row=0, column=1, sticky='ns')
+
+# run the app
+root.mainloop()
