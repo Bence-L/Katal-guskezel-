@@ -18,7 +18,7 @@ def adminkonyvei():
     Adminkonyvek.title("Könyvek")
     Adminkonyvek.configure(bg="#9A7E6F")
     
-    proba = tk.Label(Adminkonyvek, text="Könyvek", bg="#9A7E6F", fg="#493628", font=('sans', 70, 'bold'))
+    proba = tk.Label(Adminkonyvek, text="Könyvek🎄", bg="#9A7E6F", fg="#493628", font=('sans', 70, 'bold'))
     proba.grid(row=0, columnspan=1, pady=(10, 10), padx=(450,100))
 
     def beolvasas():
@@ -51,7 +51,7 @@ def adminkonyvei():
 
         listBox.tag_configure('even', background='#AB886D') 
     
-    
+
 
     cols = ('Sorszám', 'Cím', 'Kiadási dátum', 'Kiadó', 'Oldalszám', 'ISBN', 'Kölcsönzött-e?')
     listBox = ttk.Treeview(Adminkonyvek, columns=cols, show='headings')
@@ -61,11 +61,14 @@ def adminkonyvei():
 
     listBox.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
-    showScores = tk.Button(Adminkonyvek, text="Adatok mutatása",  fg="#493628", bg="#D6C0B3", font="sans 13 bold", command=show)
+    showScores = tk.Button(Adminkonyvek, text="Adatok mutatása",  fg="#493628", bg="#D6C0B3", font="sans 13 bold", width="30", height="3", command=show)
     showScores.grid(row=4, column=0, padx=(480, 100))
 
+    torlogomb = tk.Button(Adminkonyvek, text="Kijelölt mező törlése", fg="#493628", bg="#D6C0B3", font="sans 13 bold", width="30", height="3")
+    torlogomb.grid(row=5, column=0 , pady=10, padx=(480, 100))
+
     closeButton = tk.Button(Adminkonyvek, text="Vissza", fg="#493628", bg="#FF8A8A", font="sans 13 bold", command=Adminkonyvek.destroy)
-    closeButton.grid(row=5, column=0 , pady=50, padx=(480, 100))
+    closeButton.grid(row=6, column=0 , pady=20, padx=(480, 100))
 
     beolvasas()
     Adminkonyvek.mainloop()
