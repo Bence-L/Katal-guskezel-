@@ -2,19 +2,19 @@ import tkinter as tk
 from tkinter import ttk
 
 class Objektum:
-    def __init__(self, sorszam, cim, evszam, kiado, oldalszam, isbn):
+    def __init__(self, sorszam, cim, evszam, kiado, oldalszam, isbn, igennem):
         self.sorszam = sorszam
         self.cim = cim
         self.evszam = evszam
         self.kiado = kiado
         self.oldalszam = oldalszam
         self.isbn = isbn
-        self.kolcsonzott = '❌'
+        self.igennem = igennem
 
 def adminkonyvei():
     Adminkonyvek = tk.Tk()
     Adminkonyvek.geometry("1420x600")
-    Adminkonyvek.title("Könyvek🎄")
+    Adminkonyvek.title("Könyvek")
     Adminkonyvek.configure(bg="#9A7E6F")
     
     proba = tk.Label(Adminkonyvek, text="Könyvek", bg="#9A7E6F", fg="#493628", font=('sans', 70, 'bold'))
@@ -31,7 +31,8 @@ def adminkonyvei():
                 kiado = adat[2].strip()
                 oldalszam = adat[3].strip()
                 isbn = adat[4].strip()
-                book = Objektum(i, cim, evszam, kiado, oldalszam, isbn)  
+                igennem = adat[5].strip()
+                book = Objektum(i, cim, evszam, kiado, oldalszam, isbn, igennem)  
                 books.append(book)
 
     def show():
@@ -42,10 +43,10 @@ def adminkonyvei():
 
         for i, book in enumerate(sorted_books, start=1):
             if i % 2 == 0:
-                listBox.insert("", "end", values=(book.sorszam, book.cim, book.evszam, book.kiado, book.oldalszam, book.isbn, book.kolcsonzott),
+                listBox.insert("", "end", values=(book.sorszam, book.cim, book.evszam, book.kiado, book.oldalszam, book.isbn, book.igennem),
                                tags=('even'))
             else:
-                listBox.insert("", "end", values=(book.sorszam, book.cim, book.evszam, book.kiado, book.oldalszam, book.isbn, book.kolcsonzott))
+                listBox.insert("", "end", values=(book.sorszam, book.cim, book.evszam, book.kiado, book.oldalszam, book.isbn, book.igennem))
 
         listBox.tag_configure('even', background='#AB886D') 
 

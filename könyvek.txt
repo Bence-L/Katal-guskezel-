@@ -1,12 +1,12 @@
-1984, 1949, Secker & Warburg, 328, 978-0451524935, nem
-A kertészeti kézikönyv, 1996, Gulyás Kiadó, 400, 978-9632002336, nem
+1984, 1949, Secker & Warburg, 328, 978-0451524935, igen
+A kertészeti kézikönyv, 1996, Gulyás Kiadó, 400, 978-9632002336, igen
 A mester és margarita, 1967, Harvill Press, 448, 978-0141180147, nem
 To kill a mockingbird, 1960, J.B. Lippincott & Co., 281, 978-0061120084, nem
 Harry potter és a bölcsek köve, 1997, Animus Kiadó, 320, 978-963-9700-57-7, nem
 A kis herceg, 1943, Reynal & Hitchcock, 96, 978-0156012195, nem
 Száz év magány, 1967, Harper & Row, 417, 978-0060883287, nem
 Mester és margarita, 1967, Harvill Press, 447, 978-0141180147, nem
-The lord of the rings, 1954, Allen & Unwin, 1,216, 978-0261103573, nem
+The lord of the rings, 1954, Allen & Unwin, 1.216, 978-0261103573, nem
 Fahrenheit 451, 1953, Ballantine Books, 158, 978-1451673319, nem
 Dracula, 1897, Archibald Constable and Co., 416, 978-0451530110, nem
 Pride and prejudice, 1813, T. Egerton, 432, 978-1503290563, nem
