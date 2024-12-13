@@ -18,7 +18,7 @@ def Lfuggveny():
     Lekerdezes.configure(bg="#9A7E6F")
     
     proba = Label(Lekerdezes, text="Lekérdezés🎁", bg="#9A7E6F", fg="#493628", font=('sans', 60, 'bold'))
-    proba.grid(row=0, columnspan=1, pady=(10, 10), padx=200)
+    proba.grid(row=0, columnspan=1, pady=(10, 10), padx=(480,100))
 
     # Declare books as a global variable
     global books
