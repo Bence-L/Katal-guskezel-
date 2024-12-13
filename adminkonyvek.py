@@ -1,3 +1,4 @@
+from tkinter import *
 import tkinter as tk
 from tkinter import ttk
 
@@ -49,6 +50,8 @@ def adminkonyvei():
                 listBox.insert("", "end", values=(book.sorszam, book.cim, book.evszam, book.kiado, book.oldalszam, book.isbn, book.igennem))
 
         listBox.tag_configure('even', background='#AB886D') 
+    
+    
 
     cols = ('Sorszám', 'Cím', 'Kiadási dátum', 'Kiadó', 'Oldalszám', 'ISBN', 'Kölcsönzött-e?')
     listBox = ttk.Treeview(Adminkonyvek, columns=cols, show='headings')
