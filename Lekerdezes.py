@@ -43,45 +43,64 @@ def Lfuggveny():
 
     def show():
         """Megjeleníti a könyveket a táblázatban."""
+        # Törli az összes sort a táblázatból
         for item in listBox.get_children():
             listBox.delete(item)
 
+        # Rendezett könyvek megjelenítése
         sorted_books = sorted(books, key=lambda book: book.sorszam)
-
         for i, book in enumerate(sorted_books, start=1):
             if i % 2 == 0:
                 listBox.insert("", "end", values=(book.sorszam, book.cim, book.evszam, book.kiado, book.oldalszam, book.isbn, book.igennem),
-                               tags=('even',))
+                            tags=('even',))
             else:
                 listBox.insert("", "end", values=(book.sorszam, book.cim, book.evszam, book.kiado, book.oldalszam, book.isbn, book.igennem))
 
+        # Páros sorok színezése
         listBox.tag_configure('even', background='#AB886D')
+
 
     def search():
         """Keresés cím vagy ISBN alapján."""
         keresett_cim = Cím.get().strip().lower()
         keresett_isbn = isbn.get().strip().lower()
 
-        for item in listBox.get_children():
-            listBox.selection_remove(item)  # Eltávolítja a korábbi kijelöléseket
+        # Hibaüzenet alaphelyzetbe
+        error_label.config(text="")
 
+        # Ellenőrizzük, hogy van-e megadott keresési feltétel
+        if keresett_cim == "" and keresett_isbn == "":
+            error_label.config(text="Adjon meg egy címet vagy ISBN-t a kereséshez!", fg="red")
+            return
+
+        # Keresés a táblázatban
         found = False
         for item in listBox.get_children():
             values = listBox.item(item, 'values')
-            if keresett_cim and keresett_cim in values[1].lower():
-                listBox.selection_add(item)
-                listBox.see(item)
-                found = True
-            elif keresett_isbn and keresett_isbn in values[5].lower():
+
+            # Cím egyezés ellenőrzése
+            cim_egyezes = False
+            if keresett_cim != "":
+                if keresett_cim in values[1].lower():
+                    cim_egyezes = True
+
+            # ISBN egyezés ellenőrzése
+            isbn_egyezes = False
+            if keresett_isbn != "":
+                if keresett_isbn in values[5].lower():
+                    isbn_egyezes = True
+
+            # Ha van egyezés, kijelöljük az elemet
+            if cim_egyezes or isbn_egyezes:
                 listBox.selection_add(item)
                 listBox.see(item)
                 found = True
 
         # Hibaüzenet, ha nincs találat
-        if not found:
+        if found == False:
             error_label.config(text="Ilyen könyv nincs a kínálatunkban.", fg="red")
-        else:
-            error_label.config(text="")  # Üzenet eltávolítása, ha van találat
+
+
 
     # Táblázat létrehozása
     cols = ('Sorszám', 'Cím', 'Kiadási dátum', 'Kiadó', 'Oldalszám', 'ISBN', 'Kölcsönzött-e?')

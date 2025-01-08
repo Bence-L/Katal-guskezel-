@@ -23,27 +23,29 @@ def adminkonyvei():
     title_label.grid(row=0, column=0, columnspan=2, pady=(10, 10), sticky="nsew")
 
     def beolvasas():
+        """Beolvassa a könyveket a fájlból és tárolja őket a books listában."""
         global books
-        books = []
+        books = []  # Üres lista a könyvek tárolásához
         with open('könyvek.txt', 'r', encoding='utf-8') as fajl:
-            for i, sor in enumerate(fajl, start=1):
-                adat = sor.strip().split(',')
-                cim = adat[0].strip()
-                evszam = adat[1].strip()
-                kiado = adat[2].strip()
-                oldalszam = adat[3].strip()
-                isbn = adat[4].strip()
-                igennem = adat[5].strip()
-                book = Objektum(i, cim, evszam, kiado, oldalszam, isbn, igennem)
-                books.append(book)
+            for i, sor in enumerate(fajl, start=1):  # Fájl sorainak beolvasása
+                adat = sor.strip().split(',')  # Sor adatainak szétválasztása
+                cim = adat[0].strip()  # Könyv címe
+                evszam = adat[1].strip()  # Kiadás éve
+                kiado = adat[2].strip()  # Kiadó
+                oldalszam = adat[3].strip()  # Oldalszám
+                isbn = adat[4].strip()  # ISBN
+                igennem = adat[5].strip()  # Kölcsönzés állapota
+                book = Objektum(i, cim, evszam, kiado, oldalszam, isbn, igennem)  # Objektum létrehozása
+                books.append(book)  # Könyv hozzáadása a listához
 
-    def save_to_file():
-        """Frissíti a fájlt a listából."""
+    def mentes():
+        """Frissíti a fájlt a books listában szereplő könyvekkel."""
         with open('könyvek.txt', 'w', encoding='utf-8') as fajl:
-            for book in books:
+            for book in books:  # Minden könyvet végigírunk a fájlba
                 fajl.write(f"{book.cim},{book.evszam},{book.kiado},{book.oldalszam},{book.isbn},{book.igennem}\n")
 
     def show():
+        """Megjeleníti a könyveket a táblázatban."""
         # Törli az összes korábban megjelenített sort
         for item in listBox.get_children():
             listBox.delete(item)
@@ -52,26 +54,31 @@ def adminkonyvei():
         for i, book in enumerate(books, start=1):
             if i % 2 == 0:
                 listBox.insert("", "end", values=(book.sorszam, book.cim, book.evszam, book.kiado, book.oldalszam, book.isbn, book.igennem),
-                               tags=('even',))
+                            tags=('even',))
             else:
                 listBox.insert("", "end", values=(book.sorszam, book.cim, book.evszam, book.kiado, book.oldalszam, book.isbn, book.igennem))
 
-        listBox.tag_configure('even', background='#AB886D')  # Páros sorok színezése
+        # Páros sorok színezése
+        listBox.tag_configure('even', background='#AB886D')
 
     def delete_selected():
         """Törli a kijelölt könyveket a táblázatból és a fájlból."""
-        global books
+        global books  # Globális változó, amit frissíteni kell
+
         selected_items = listBox.selection()  # Kijelölt elemek
-        to_delete = []
+        to_delete = []  # Lista, amiben a törlendő könyveket tároljuk
 
         for item in selected_items:
             values = listBox.item(item, 'values')  # Kijelölt sor adatai
-            listBox.delete(item)  # Törlés a Treeview-ból
-            to_delete.append(int(values[0]))  # Sorszám alapú azonosítás
+            listBox.delete(item)  # Könyv törlése a táblázatból
+            to_delete.append(int(values[0]))  # Sorszámot hozzáadjuk a törlendők listájához
 
-        # Könyvek szűrése a törléshez
+        # Frissítjük a books listát, eltávolítva a törölt könyveket
         books = [book for book in books if book.sorszam not in to_delete]
-        save_to_file()  # Frissítés a fájlban
+        
+        # Frissítjük a fájlt is a módosított könyvlistával
+        mentes()
+
 
     # Táblázat létrehozása
     cols = ('Sorszám', 'Cím', 'Kiadási dátum', 'Kiadó', 'Oldalszám', 'ISBN', 'Kölcsönzött-e?')
