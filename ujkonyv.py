@@ -117,7 +117,7 @@ def ujfuggveny():
     isbn.grid(row=14, column=0, columnspan=2, pady=(0, 5))
 
     hozzaadas_button = tk.Button(hozzaado_keret, text="Hozzáadás", fg="#493628", bg="#D6C0B3", font="sans 13 bold", 
-                             width=30, height=2)
+                             width=20, height=2)
     hozzaadas_button.pack(pady=10)
 
     close_button = tk.Button(kilepo_keret, text="Vissza", fg="#493628", bg="#FF8A8A", font="sans 13 bold", 
