@@ -114,7 +114,6 @@ def konyv_modositas():
     cimkek = ["Sorszám:", "Cím:", "Kiadási dátum:", "Kiadó:", "Oldalszám:", "ISBN:", "Kölcsönzött-e?"]
     mezok = []
 
-
     for i, cimke_szoveg in enumerate(cimkek):
         cimke = Label(ablak, text=cimke_szoveg, bg="#9A7E6F", fg="#493628", font=('Comic Sans', 10, 'bold'))
         cimke.grid(row=4 + i, column=0, sticky="e", pady=5)
@@ -128,6 +127,7 @@ def konyv_modositas():
     #Mentő és bezáró gomb
     mentes_gomb = Button(ablak, text="Mentés", fg="#493628", bg="#D6C0B3", font="sans 13 bold", command=mentes)
     mentes_gomb.grid(row=11, column=0, columnspan=2, pady=10)
+
     bezar_gomb = Button(ablak, text="Bezárás", fg="#493628", bg="#FF8A8A", font="sans 13 bold", command=ablak.destroy)
     bezar_gomb.grid(row=12, column=0, columnspan=2, pady=10)
 
