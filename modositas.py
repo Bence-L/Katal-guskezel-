@@ -132,6 +132,3 @@ def konyv_modositas():
     bezar_gomb.grid(row=12, column=0, columnspan=2, pady=10)
 
     ablak.mainloop()
-
-
-konyv_modositas()
