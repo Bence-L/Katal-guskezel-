@@ -32,7 +32,7 @@ def ellenoriz():
         if felhasznalonev == "1" and jelszom == "1" :
             # Fő ablak bezárása sikeres bejelentkezés esetén
             ujabblaknyitas()
-        if felhasznalonev == "2" and jelszom == "2":
+        if felhasznalonev == "Admin" and jelszom == "Admin":
             adminablak()
         else:
             rossz = Label(master, text="Rossz jelszó, próbáld újra", bg="#9A7E6F",fg="#493628", font=('Comic Sans', 11, 'bold'))

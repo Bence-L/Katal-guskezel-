@@ -1,4 +1,4 @@
-1984,1949,Secker & Warburg,328,978-0451524935,igen
+1985,1949,Secker & Warburg,328,978-0451524935,igen
 A kertészeti kézikönyv,1996,Gulyás Kiadó,400,978-9632002336,igen
 A mester és margarita,1967,Harvill Press,448,978-0141180147,nem
 To kill a mockingbird,1960,J.B. Lippincott & Co.,281,978-0061120084,nem
@@ -48,6 +48,6 @@ A titokzatos sziget,1874,Hetzel,431,978-1533148062,nem
 Viharboszorkány,2016,Könyvmolyképző Kiadó,348,978-9633640962,nem
 Káosz és rend,2018,Gabo Kiadó,322,978-9634061919,nem
 A nyugati világ vége,2020,Tilos Az Á Kiadó,301,978-9634104216,nem
-KISS BENCE CSATÁI,,,,,Nem
+KISS BENCE CSATÁI,2000,asd,100,as,Nem
 dsfsg,asdfg,fdgds,hgfd,adsfsad,Nem
 KEDD VAN,2024,Bence Kiadó,1000000000,asd,Nem

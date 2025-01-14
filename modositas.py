@@ -15,18 +15,19 @@ class Konyv:
 
 def konyv_modositas():
     ablak = Tk()
-    ablak.geometry("1420x750")
+    ablak.geometry("1450x750")
     ablak.title("Lekérdezés")
     ablak.configure(bg="#9A7E6F")
 
-    cimke = Label(ablak, text="Lekérdezés🎁", bg="#9A7E6F", fg="#493628", font=('sans', 60, 'bold'))
+    #Cím
+    cimke = Label(ablak, text="Módosítás🧪", bg="#9A7E6F", fg="#493628", font=('sans', 40, 'bold'))
     cimke.grid(row=0, columnspan=3, pady=(10, 10))
 
     global konyvek
     konyvek = []
 
+    #Beolvasás
     def beolvasas():
-        """Könyvek beolvasása fájlból."""
         global konyvek
         konyvek = []
         with open('könyvek.txt', 'r', encoding='utf-8') as fajl:
@@ -35,14 +36,14 @@ def konyv_modositas():
                 konyv = Konyv(i, *[adat.strip() for adat in adatok])
                 konyvek.append(konyv)
 
+    #Megjelenítés
     def megjelenites():
-        """Könyvek megjelenítése a táblázatban."""
         tabla.delete(*tabla.get_children())
         for konyv in konyvek:
             tabla.insert("", "end", values=(konyv.sorszam, konyv.cim, konyv.evszam, konyv.kiado, konyv.oldalszam, konyv.isbn, konyv.kolcsonzott))
 
+    #Betöltés
     def betoltes():
-        """Kiválasztott könyv betöltése az Entry mezőkbe."""
         kivalasztott = tabla.selection()
         if kivalasztott:
             ertekek = tabla.item(kivalasztott[0], 'values')
@@ -50,8 +51,8 @@ def konyv_modositas():
                 if str(konyv.sorszam) == ertekek[0]:
                     kitoltes(konyv)
 
+    #Az entryk feltöltése adatokkal
     def kitoltes(konyv):
-        """Entry mezők kitöltése a könyv adataival."""
         sorszam_mezo.delete(0, END)
         cim_mezo.delete(0, END)
         evszam_mezo.delete(0, END)
@@ -68,8 +69,8 @@ def konyv_modositas():
         isbn_mezo.insert(0, konyv.isbn)
         kolcsonzott_mezo.insert(0, konyv.kolcsonzott)
 
+    #Mentés
     def mentes():
-        """Módosítások mentése a fájlba."""
         kivalasztott = tabla.selection()
         if kivalasztott:
             ertekek = tabla.item(kivalasztott[0], 'values')
@@ -90,26 +91,29 @@ def konyv_modositas():
             megjelenites()
 
     oszlopok = ('Sorszám', 'Cím', 'Kiadási dátum', 'Kiadó', 'Oldalszám', 'ISBN', 'Kölcsönzött-e?')
-    tabla = ttk.Treeview(ablak, columns=oszlopok, show='headings', height=6)
+    tabla = ttk.Treeview(ablak, columns=oszlopok, show='headings', height=8)
 
     for oszlop in oszlopok:
         tabla.heading(oszlop, text=oszlop)
 
-    # Görgetősáv
+    #Scrollbar
     gorgeto = Scrollbar(ablak, orient=VERTICAL, command=tabla.yview)
     tabla.configure(yscrollcommand=gorgeto.set)
 
     gorgeto.grid(row=1, column=2, sticky="ns", padx=(0, 10))
     tabla.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 
+    #Adatok megmutatása gomb
     adat_gomb = Button(ablak, text="Adatok mutatása", fg="#493628", bg="#D6C0B3", font="sans 16 bold", command=lambda: [beolvasas(), megjelenites()])
     adat_gomb.grid(row=2, column=0, columnspan=2, pady=10)
 
-    betolt_gomb = Button(ablak, text="Lekérdezés", fg="#493628", bg="#C0D6B3", font="sans 13 bold", command=betoltes)
+    #A kiválasztott sor adatainak betöltése
+    betolt_gomb = Button(ablak, text="Lekérdezés", fg="#493628", bg="#D6C0B3", font="sans 13 bold", width=20, height=2, command=betoltes)
     betolt_gomb.grid(row=3, column=0, columnspan=2, pady=10)
 
     cimkek = ["Sorszám:", "Cím:", "Kiadási dátum:", "Kiadó:", "Oldalszám:", "ISBN:", "Kölcsönzött-e?"]
     mezok = []
+
 
     for i, cimke_szoveg in enumerate(cimkek):
         cimke = Label(ablak, text=cimke_szoveg, bg="#9A7E6F", fg="#493628", font=('Comic Sans', 10, 'bold'))
@@ -121,9 +125,9 @@ def konyv_modositas():
 
     sorszam_mezo, cim_mezo, evszam_mezo, kiado_mezo, oldalszam_mezo, isbn_mezo, kolcsonzott_mezo = mezok
 
+    #Mentő és bezáró gomb
     mentes_gomb = Button(ablak, text="Mentés", fg="#493628", bg="#D6C0B3", font="sans 13 bold", command=mentes)
     mentes_gomb.grid(row=11, column=0, columnspan=2, pady=10)
-
     bezar_gomb = Button(ablak, text="Bezárás", fg="#493628", bg="#FF8A8A", font="sans 13 bold", command=ablak.destroy)
     bezar_gomb.grid(row=12, column=0, columnspan=2, pady=10)
 

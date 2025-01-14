@@ -13,18 +13,19 @@ class Objektum:
 
 def Lfuggveny():
     Lekerdezes = Tk()
-    Lekerdezes.geometry("1420x750")
+    Lekerdezes.geometry("1450x750")
     Lekerdezes.title("Lekérdezés")
     Lekerdezes.configure(bg="#9A7E6F")
 
-    # Cím
+    #Cím
     proba = Label(Lekerdezes, text="Lekérdezés🎁", bg="#9A7E6F", fg="#493628", font=('sans', 60, 'bold'))
     proba.grid(row=0, columnspan=2, pady=(10, 10))
 
-    # Globális könyvek lista
+    #Globális könyvek lista
     global books
     books = []
 
+    #Beolvasás
     def beolvasas():
         """Beolvassa a könyveket a fájlból."""
         global books
@@ -41,6 +42,7 @@ def Lfuggveny():
                 book = Objektum(i, cim, evszam, kiado, oldalszam, isbn, igennem)
                 books.append(book)
 
+    #Megjelenítés
     def show():
         """Megjeleníti a könyveket a táblázatban."""
         # Törli az összes sort a táblázatból
@@ -59,13 +61,13 @@ def Lfuggveny():
         # Páros sorok színezése
         listBox.tag_configure('even', background='#AB886D')
 
-
+    #keresés
     def search():
-        """Keresés cím vagy ISBN alapján."""
+        #Vagy cím vagy isbn alapján
         keresett_cim = Cím.get().strip().lower()
         keresett_isbn = isbn.get().strip().lower()
 
-        # Hibaüzenet alaphelyzetbe
+        #Hibaüzenet alaphelyzetbe
         error_label.config(text="")
 
         # Ellenőrizzük, hogy van-e megadott keresési feltétel
@@ -73,36 +75,32 @@ def Lfuggveny():
             error_label.config(text="Adjon meg egy címet vagy ISBN-t a kereséshez!", fg="red")
             return
 
-        # Keresés a táblázatban
+        #Keresés a táblázatban
         found = False
         for item in listBox.get_children():
             values = listBox.item(item, 'values')
-
-            # Cím egyezés ellenőrzése
+            #Cím egyezés ellenőrzése
             cim_egyezes = False
             if keresett_cim != "":
                 if keresett_cim in values[1].lower():
                     cim_egyezes = True
-
-            # ISBN egyezés ellenőrzése
+            #ISBN egyezés ellenőrzése
             isbn_egyezes = False
             if keresett_isbn != "":
                 if keresett_isbn in values[5].lower():
                     isbn_egyezes = True
-
-            # Ha van egyezés, kijelöljük az elemet
+            #Ha van egyezés akkor kijelöli az elemet
             if cim_egyezes or isbn_egyezes:
                 listBox.selection_add(item)
                 listBox.see(item)
                 found = True
-
-        # Hibaüzenet, ha nincs találat
+        #Hibaüzenet, ha nincs találat
         if found == False:
             error_label.config(text="Ilyen könyv nincs a kínálatunkban.", fg="red")
 
 
 
-    # Táblázat létrehozása
+    #Táblázat létrehozása
     cols = ('Sorszám', 'Cím', 'Kiadási dátum', 'Kiadó', 'Oldalszám', 'ISBN', 'Kölcsönzött-e?')
     listBox = ttk.Treeview(Lekerdezes, columns=cols, show='headings', height=15)
 
@@ -111,37 +109,43 @@ def Lfuggveny():
 
     listBox.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 
-    # Adatok mutatása gomb
+    gorgeto = ttk.Scrollbar(Lekerdezes, orient="vertical", command=listBox.yview)
+    listBox.configure(yscroll=gorgeto.set)
+    listBox.grid(row=1, column=0, columnspan=2, padx=10, pady=10, sticky="nsew")
+    gorgeto.grid(row=1, column=2, sticky="ns")
+
+
+    #Adatok mutatása gomb
     adat = Button(Lekerdezes, text="Adatok mutatása", fg="#493628", bg="#D6C0B3", font="sans 16 bold", command=show)
     adat.grid(row=2, column=0, columnspan=2, pady=10)
 
-    # Cím keresési mező
+    #Cím keresési mező
     cime = Label(Lekerdezes, text="Írja be a címet:", fg="#493628", bg="#9A7E6F", font=('Comic Sans', 10, 'bold'))
     cime.grid(row=3, column=0, pady=3, sticky="e")
 
     Cím = Entry(Lekerdezes, width=30, bg="#D6C0B3")
     Cím.grid(row=3, column=1, pady=3, sticky="w")
 
-    # ISBN keresési mező
+    #ISBN keresési mező
     isbne = Label(Lekerdezes, text="Írja be az ISBN-t:", fg="#493628", bg="#9A7E6F", font=('Comic Sans', 10, 'bold'))
     isbne.grid(row=4, column=0, pady=3, sticky="e")
 
     isbn = Entry(Lekerdezes, width=30, bg="#D6C0B3")
     isbn.grid(row=4, column=1, pady=3, sticky="w")
 
-    # Keresés gomb
-    keres_gomb = Button(Lekerdezes, text="KERESÉS", fg="#493628", bg="#D6C0B3", font="sans 13 bold", command=search)
-    keres_gomb.grid(row=5, column=0, columnspan=2, pady=10)
+    #Keresés gomb
+    keres_gomb = Button(Lekerdezes, text="KERESÉS", fg="#493628", bg="#D6C0B3", font="sans 13 bold", width=20, height=2, command=search)
+    keres_gomb.grid(row=5, column=0, columnspan=2, pady=5)
 
-    # Hibaüzenet
+    #Hibaüzenet
     error_label = Label(Lekerdezes, text="", bg="#9A7E6F", font=('Comic Sans', 10, 'bold'))
     error_label.grid(row=6, column=0, columnspan=2, pady=5)
 
-    # Vissza gomb
+    #Vissza gomb
     bezaras = Button(Lekerdezes, text="Vissza", fg="#493628", bg="#FF8A8A", font="sans 13 bold", command=Lekerdezes.destroy)
-    bezaras.grid(row=7, column=0, columnspan=2, pady=20)
+    bezaras.grid(row=7, column=0, columnspan=2, pady=5)
 
-    # Könyvek beolvasása
+    #Könyvek beolvasása
     beolvasas()
     Lekerdezes.mainloop()
 
