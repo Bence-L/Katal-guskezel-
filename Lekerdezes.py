@@ -149,4 +149,4 @@ def Lfuggveny():
     beolvasas()
     Lekerdezes.mainloop()
 
-Lfuggveny()
+

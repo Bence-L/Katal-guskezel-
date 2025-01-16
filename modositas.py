@@ -13,7 +13,7 @@ class Konyv:
         self.kolcsonzott = kolcsonzott
 
 
-def konyv_modositas():
+def mfugveny():
     ablak = Tk()
     ablak.geometry("1450x750")
     ablak.title("Lekérdezés")

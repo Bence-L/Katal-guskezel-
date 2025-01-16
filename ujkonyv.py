@@ -20,7 +20,7 @@ def ujfuggveny():
     ujkonyvek.configure(bg="#9A7E6F")
     
     #Címsor
-    proba = Label(ujkonyvek, text="Hozzáadás", bg="#9A7E6F", fg="#493628", font=('sans', 40, 'bold'))
+    proba = Label(ujkonyvek, text="Hozzáadás➕", bg="#9A7E6F", fg="#493628", font=('sans', 40, 'bold'))
     proba.grid(row=0, column=0, columnspan=2, pady=(10, 10), sticky="nsew")
 
     #Beolvasás

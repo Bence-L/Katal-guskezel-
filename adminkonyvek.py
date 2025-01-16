@@ -112,4 +112,4 @@ def adminkonyvei():
     beolvasas()
     Adminkonyvek.mainloop()
 
-adminkonyvei()
+
