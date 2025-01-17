@@ -65,9 +65,12 @@ def tablazat():
 
     showScores = tk.Button(tablazat, text="Adatok mutatása",  fg="#493628", bg="#D6C0B3", font="sans 13 bold", command=show)
     showScores.grid(row=4, column=0, padx=(480, 100))
+    tk.Button(tablazat, text="Kikölcsönzés", fg="white", bg="green", font="sans 13 bold").grid(row=5, column=0, padx=(100, 10))
+    tk.Button(tablazat, text="Visszahozás", fg="white", bg="blue", font="sans 13 bold").grid(row=5, column=0, padx=(400, 10))
+    tk.Button(tablazat, text="Hosszabbítás", fg="white", bg="orange", font="sans 13 bold").grid(row=5, column=0, padx=(700, 10))
 
     closeButton = tk.Button(tablazat, text="Vissza", fg="#493628", bg="#FF8A8A", font="sans 13 bold", command=tablazat.destroy)
-    closeButton.grid(row=5, column=0 , pady=50, padx=(480, 100))
+    closeButton.grid(row=6, column=0 , pady=50, padx=(480, 100))
 
     beolvasas()
     tablazat.mainloop()
