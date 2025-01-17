@@ -48,5 +48,3 @@ A titokzatos sziget,1874,Hetzel,431,978-1533148062,nem
 Viharboszorkány,2016,Könyvmolyképző Kiadó,348,978-9633640962,nem
 Káosz és rend,2018,Gabo Kiadó,322,978-9634061919,nem
 A nyugati világ vége,2020,Tilos Az Á Kiadó,301,978-9634104216,nem
-KISS BENCE CSATÁI,2000,asd,100,as,Nem
-valami,2000,Kiado,200,as,Nem
