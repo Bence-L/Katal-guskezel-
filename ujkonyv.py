@@ -15,7 +15,7 @@ class Objektum:
 
 def ujfuggveny():
     ujkonyvek = tk.Tk()
-    ujkonyvek.geometry("750x1300")
+    ujkonyvek.geometry("750x900")
     ujkonyvek.title("Könyvek📖")
     ujkonyvek.configure(bg="#9A7E6F")
     
